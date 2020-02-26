@@ -3,8 +3,8 @@ if(!function_exists("openConnection")){
 function openConnection() {
 
 $dbhost    = "localhost";
-$dbuser    = "Victor-28";
-$dbpass    = "Akin4wumi";
+$dbuser    = "newUser";
+$dbpass    = "Wachtwoord123!";
 $db        = "becode";
 
 $pdo = new PDO('mysql:host=localhost;dbname=becode','newUser', 'Wachtwoord123!');

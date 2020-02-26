@@ -35,17 +35,16 @@ function emma($firstName, $lastName, $username, $linkedin, $github, $email, $pre
               $avatar, $video, $quote, $quote_author)
 {
     $newConnection = openConnection();
-    $insertCommand = "INSERT INTO student (student.firstName, student.lastName, username, linkedin, github, email, preferred_language, avatar, video, quote, quote_author) 
+    $insertCommand = "INSERT INTO student (firstName, lastName, username, linkedin, github, email, preferred_language, avatar, video, quote, quote_author) 
                      VALUES (:firstName, :lastName, :username, :linkedin, :github, :email, :preferred_language, :avatar, :video, :quote, :quote_author)";
 
-    $newConnection->prepare($insertCommand);
-    $newConnection->execute([
+    $newConnection->prepare($insertCommand)->execute([
         'firstName' => $firstName,
         'lastName' => $lastName,
         'username' => $username,
         'linkedin' => $linkedin,
         'github' => $github,
-        'e-mail' => $email,
+        'email' => $email,
         'preferred_language' => $preferred_language,
         'avatar' => $avatar,
         'video' => $video,

@@ -1,5 +1,10 @@
 <?php
 require 'connection.php';
+require 'homepagecontroller.php';
+require 'insert.php';
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 //
 //$servername = "localhost";
 //$username = "Victor-28";
@@ -27,18 +32,18 @@ try {
     <form method="post">
 
 
-        <label for="first_name">first_name:</label><br>
-        <input type="text" id="first_name" name="first_name">
-        <label for="last-name">lastname:</label><br>
-        <input type="text" id="last-name" name="last-name">
+        <label for="firstName">firstName:</label><br>
+        <input type="text" id="firstName" name="firstName">
+        <label for="lastName">lastName:</label><br>
+        <input type="text" id="lastName" name="lastName">
         <label for="linkedin">linkedin:</label><br>
         <input type="text" id="linkedin" name="linkedin">
         <label for="github">github:</label><br>
         <input type="text" id="github" name="github">
         <label for="username">username:</label><br>
-        <input type="text" id="e-mail" name="e-mail">
-        <label for="e-mail">e-mail:</label><br>
         <input type="text" id="username" name="username">
+        <label for="email">email:</label><br>
+        <input type="text" id="email" name="email">
         <label for="preferred_language">preferred_language:</label><br>
         <input type="text" id="preferred_language" name="preferred_language">
         <label for="avatar">avatar:</label><br>
@@ -49,8 +54,7 @@ try {
         <input type="text" id="quote" name="quote">
         <label for="quote_author">quote_author:</label><br>
         <input type="text" id="quote_author" name="quote_author">
-        <label for="created_at">created_at:</label><br>
-        <input type="text" id="created_at" name="created_at">
+
 
         <input type="submit" name="SubmitButton">
 
