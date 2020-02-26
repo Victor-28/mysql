@@ -56,53 +56,8 @@ try {
 
     </form>
 
-
     <p>That is who I am</p>
     </body>
     </html>
 
 
-<?php
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
-
-require 'connection.php';
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last-name'];
-    $username = $_POST['username'];
-    $linkedin = $_POST['linkedin'];
-    $github = $_POST['github'];
-    $email = $_POST['e-mail'];
-    $preferred_language = $_POST['preferred_language'];
-    $avatar = $_POST['avatar'];
-    $video = $_POST['video'];
-    $quote = $_POST['quote'];
-    $quote_author = $_POST['quote_author'];
-
-
-    emma($_POST['first_name'], $_POST['last-name'], $_POST['username'], $_POST['linkedin'], $_POST['github'], $_POST['preferred_language'], $_POST['e-mail'], $_POST['avatar'], $_POST['video'], $_POST['quote'], $_POST['quote_author']);
-}
-
-
-function emma($first_name, $last_name, $username, $linkedin, $github, $email, $preferred_language, $avatar, $video, $quote, $quote_author)
-{
-    $newConnection = openConnection();
-    $insertCommand = "INSERT INTO student (first_name, last-name, username, linkedin, github, e-mail, preferred_language, avatar, video, quote, quote_author) 
-                     VALUES (:first_name, :last-name, :username,:linkedin, :github, :email, :preferred_language, :avatar, :video, :quote, :quote_author)";
-
-    $newConnection->prepare($insertCommand);
-    $newConnection->execute([
-        'first_name' => $first_name,
-        'last-name' => $last_name, 'username' => $username, 'linkedin' => $linkedin, 'github' => $github,
-        'email' => $email, 'preferred_language' => $preferred_language, 'avatar' => $avatar, 'video' => $video,
-        'quote' => $quote, 'quote_author' => $quote_author]);
-
-}
-
-
-?>
